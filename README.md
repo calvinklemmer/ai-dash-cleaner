@@ -13,6 +13,28 @@ Kleine Bash-tool die "AI-streepjes": de 'en dash' ( – , U+2013) en 'em dash' (
 - Toont, als de doelmap een git-repository is, een `git diff --check` en per-bestand diff van alle wijzigingen
 
 ## Gebruik
+
+> Status: work in progress. Het menu-skelet hieronder staat; de Scan-optie
+> is nog niet gekoppeld aan de daadwerkelijke scanlogica (zie Roadmap).
+
+### Via het menu
+```bash
+cd ai-dash-cleaner
+bash menu.sh
+```
+```
+┌─────────────────────────────┐
+│      AI DASH CLEANER       │
+└─────────────────────────────┘
+
+1) Scan
+2) Help
+3) About
+
+x) Exit
+```
+
+### Rechtstreeks (huidige werkende manier)
 ```bash
 ./remove-ai-dashes.sh [map/]
 ```
@@ -23,6 +45,21 @@ Voorbeeld:
 ```
 
 Zonder argument wordt de huidige map (en alles eronder) gescand.
+
+## Projectstructuur
+
+```
+ai-dash-cleaner/
+├── menu.sh                  # entry point
+├── lib/
+│   ├── colors.sh             # kleurdefinities
+│   ├── common.sh             # log_info / log_success / log_warning / log_error
+│   ├── globals.sh            # banner + placeholder-scherm
+│   └── program-exit.sh       # graceful_exit
+├── remove-ai-dashes.sh       # bestaande, werkende scanlogica (nog los van het menu)
+├── README.md
+└── LICENSE
+```
 
 ## Vereisten
 
@@ -38,6 +75,14 @@ Zonder argument wordt de huidige map (en alles eronder) gescand.
 
 - `.docx`-bestanden die open staan in Word kunnen niet worden bijgewerkt (bestandslock): sluit ze eerst.
 - Het script wijzigt bestanden **in-place**. Werk bij voorkeur in een git-repository zodat je de wijzigingen kunt reviewen (`git diff --check` gebeurt automatisch) en zo nodig kunt terugdraaien.
+
+## Roadmap
+
+- [x] Menu-skelet met Scan / Help / About / Exit
+- [ ] ShellCheck + basistests (Bats), lokaal en via CI
+- [ ] Scan-optie koppelen aan de bestaande scanlogica (`remove-ai-dashes.sh`)
+- [ ] `--dry-run`/`--check`-modus
+- [ ] Echte inhoud voor Help / About
 
 ## Licentie
 
