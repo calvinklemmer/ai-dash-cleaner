@@ -17,5 +17,5 @@ log_warning() {
 }
 
 log_error() {
-    echo -e "${RED}[ERROR]${NC} $1" >&2
+    echo "";echo -e "${RED}[ERROR]${NC} $1" >&2
 }

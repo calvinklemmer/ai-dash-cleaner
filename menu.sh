@@ -18,10 +18,12 @@ source "$PROJECT_ROOT/lib/colors.sh"
 source "$PROJECT_ROOT/lib/common.sh"
 source "$PROJECT_ROOT/lib/globals.sh"
 source "$PROJECT_ROOT/lib/program-exit.sh"
+source "$PROJECT_ROOT/lib/about.sh"
 
 main_menu() {
     while true; do
         print_banner
+        echo
         echo "1) Scan"
         echo "2) Help"
         echo "3) About"
@@ -39,7 +41,7 @@ main_menu() {
         case "$choice" in
             1) show_placeholder "Scan" ;;
             2) show_placeholder "Help" ;;
-            3) show_placeholder "About" ;;
+            3) show_about ;;
             x|X) graceful_exit ;;
             *)
                 log_error "Invalid choice: $choice"

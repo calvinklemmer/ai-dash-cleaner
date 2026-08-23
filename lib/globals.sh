@@ -12,11 +12,11 @@ print_banner() {
     local pad_left=$(( pad_total / 2 ))
     local pad_right=$(( pad_total - pad_left ))
 
-    echo -e "${CYAN}"
-    printf '┌%s┐\n' "$(printf '─%.0s' $(seq 1 "$width"))"
+    # No leading/trailing blank line here on purpose - callers decide their
+    # own spacing after the banner (see menu.sh vs lib/about.sh).
+    printf '%b┌%s┐\n' "$CYAN" "$(printf '─%.0s' $(seq 1 "$width"))"
     printf '│%*s%s%*s│\n' "$pad_left" '' "$title" "$pad_right" ''
-    printf '└%s┘\n' "$(printf '─%.0s' $(seq 1 "$width"))"
-    echo -e "${NC}"
+    printf '└%s┘%b\n' "$(printf '─%.0s' $(seq 1 "$width"))" "$NC"
 }
 
 # usage: show_placeholder "Scan"
