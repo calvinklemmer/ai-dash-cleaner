@@ -19,6 +19,7 @@ source "$PROJECT_ROOT/lib/common.sh"
 source "$PROJECT_ROOT/lib/globals.sh"
 source "$PROJECT_ROOT/lib/program-exit.sh"
 source "$PROJECT_ROOT/lib/about.sh"
+source "$PROJECT_ROOT/lib/help.sh"
 
 main_menu() {
     while true; do
@@ -41,7 +42,7 @@ main_menu() {
 
         case "$choice" in
             1) show_placeholder "Scan" ;;
-            2) show_placeholder "Help" ;;
+            2) show_help ;;
             3) show_about ;;
             x|X) graceful_exit ;;
             *)
