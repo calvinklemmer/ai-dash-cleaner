@@ -24,6 +24,7 @@ main_menu() {
     while true; do
         print_banner
         echo
+        echo -e "${CYAN}Menu:${NC}"
         echo "1) Scan"
         echo "2) Help"
         echo "3) About"
