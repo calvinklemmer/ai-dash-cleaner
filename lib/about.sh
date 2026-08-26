@@ -7,9 +7,10 @@
 
 show_about() {
     print_banner
-    echo "v0.1.0-dev"
     echo
     echo -e "${CYAN}About${NC}"
+    echo "v0.1.0-dev"
+    echo
     echo "Detects and removes AI-style dashes (en dash - U+2013, em dash - U+2014)"
     echo "from text files and Word documents, replacing them with a regular hyphen."
     echo

@@ -7,13 +7,14 @@
 
 show_help() {
     print_banner
-    echo "v0.1.0-dev"
     echo
-    echo -e "${CYAN}Help:${NC}"
-    echo "Scan  - scan a folder and replace AI dashes with a regular hyphen"
+    echo -e "${CYAN}Help${NC}"
+    echo "This screen explains what each option in the menu does."
+    echo
+    echo "Scan  - find and replace AI dashes (en dash / em dash) with a hyphen"
     echo "Help  - this screen"
     echo "About - version and license info"
-    echo "Exit  - quit the program"
+    echo "Exit  - quit the program nicely (Ctrl+C also works)"
     echo
     echo
     read -rp "Press ENTER to return.." _
