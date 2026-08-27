@@ -24,9 +24,11 @@ bash menu.sh
 ```
 ```
 ┌─────────────────────────────┐
-│      AI DASH CLEANER       │
+│       AI DASH CLEANER       │
+│                  v0.1.0-dev │
 └─────────────────────────────┘
 
+Menu:
 1) Scan
 2) Help
 3) About
@@ -54,7 +56,9 @@ ai-dash-cleaner/
 ├── lib/
 │   ├── colors.sh             # kleurdefinities
 │   ├── common.sh             # log_info / log_success / log_warning / log_error
-│   ├── globals.sh            # banner + placeholder-scherm
+│   ├── globals.sh            # banner (incl. versie) + placeholder-scherm
+│   ├── about.sh               # About-scherm
+│   ├── help.sh                # Help-scherm
 │   └── program-exit.sh       # graceful_exit
 ├── remove-ai-dashes.sh       # bestaande, werkende scanlogica (nog los van het menu)
 ├── README.md
@@ -79,10 +83,10 @@ ai-dash-cleaner/
 ## Roadmap
 
 - [x] Menu-skelet met Scan / Help / About / Exit
+- [x] Echte inhoud voor Help / About
 - [ ] ShellCheck + basistests (Bats), lokaal en via CI
 - [ ] Scan-optie koppelen aan de bestaande scanlogica (`remove-ai-dashes.sh`)
 - [ ] `--dry-run`/`--check`-modus
-- [ ] Echte inhoud voor Help / About
 
 ## Licentie
 
